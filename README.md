@@ -25,7 +25,7 @@ $ npm run dev
 ## Steps to reproduce
 
  1. Mouse down on the last char of the text input
- 2. Drag selection to the left and move mouse outside of the text input.
+ 2. Expand selection to the left and move mouse outside of the text input.
  3. Mouse up when cursor is hover the PDF or iframe.
  4. Use keyboard to enter text.
  5. The text is written backwards.
