@@ -1,27 +1,37 @@
-# React + TypeScript + Vite
+# Chromium Bug 1474271
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[https://bugs.chromium.org/p/chromium/issues/detail?id=1474271&q=backwards&can=2](https://bugs.chromium.org/p/chromium/issues/detail?id=1474271&q=backwards&can=2)
 
-Currently, two official plugins are available:
+This repo contains an small react app to demonstrate the behaivour of Chromium Bug 1474271
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Working demo
 
-## Expanding the ESLint configuration
+[https://rubendigio.github.io/test-input-backwards/](https://rubendigio.github.io/test-input-backwards/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
 
-- Configure the top-level `parserOptions` property like this:
+Clone repo and install dependencies
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+$ npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Start development server
+
+```
+$ npm run dev
+```
+
+## Steps to reproduce
+
+ 1. Mouse down on the last char of the text input
+ 2. Drag selection to the left and move mouse outside of the text input.
+ 3. Mouse up when cursor is hover the PDF or iframe.
+ 4. Use keyboard to enter text.
+ 5. The text is written backwards.
+
+ ## Variants
+
+The bug occurs either with iframes or with embedded PDF views (which I think it's an iframe also). Also, a parent cointainer should have visible scrollbars.
+
+You can toggle between PDF and iframe. You can also toggle the scrollbar visibility
